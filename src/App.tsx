@@ -2,7 +2,6 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from '@components/layout/Layout';
 import { DashboardPage } from '@pages/DashboardPage';
-import { IdeasPage } from '@pages/IdeasPage';
 import { SettingsPage } from '@pages/SettingsPage';
 
 const AssistantPage = lazy(() =>
@@ -13,6 +12,9 @@ const MusicPage = lazy(() =>
 );
 const ReferencesPage = lazy(() =>
   import('@pages/ReferencesPage').then((module) => ({ default: module.ReferencesPage })),
+);
+const IdeasPage = lazy(() =>
+  import('@pages/IdeasPage').then((module) => ({ default: module.IdeasPage })),
 );
 
 function PageFallback() {
@@ -52,7 +54,14 @@ function App() {
             </Suspense>
           }
         />
-        <Route path="ideas" element={<IdeasPage />} />
+        <Route
+          path="ideas"
+          element={
+            <Suspense fallback={<PageFallback />}>
+              <IdeasPage />
+            </Suspense>
+          }
+        />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
