@@ -1,0 +1,36 @@
+{
+  "name": "emma-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "EMMA - Espacio de trabajo para artistas tradicionales",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fabric": "^6.4.3",
+    "framer-motion": "^11.11.17",
+    "jsmediatags": "^3.9.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.1.1",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/fabric": "^5.3.9",
+    "@types/jsmediatags": "^3.9.6",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}
